@@ -1,0 +1,264 @@
+$browser-default-font-size: 75px !default;
+* {
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    word-break: break-all;
+    word-wrap: break-word;
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight: rgba(0, 0, 0, 0);
+    -webkit-text-size-adjust: none;
+    outline:none;
+}
+
+.html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+}
+html{
+    background:#fcfcfc;
+}
+.wrap {
+    width: 100%;
+}
+
+html {
+    font-size: $browser-default-font-size;
+}
+
+@function pxTorem($px) {
+    // 获取宽度高度等函数   调用  width:pxTorem(xx);
+    @return $px / $browser-default-font-size * 1rem;
+}
+
+@mixin px2px($px) {
+    // 获取文字大小函数   调用  @include pxTorem(xx);
+    [data-dpr="1"] & {
+        font-size: ($px / 2) * 1px !important;
+    }
+    [data-dpr="2"] & {
+        font-size: $px * 1px !important;
+    }
+    [data-dpr="3"] & {
+        font-size: ($px / 2 * 3) * 1px !important;
+    }
+}
+
+@mixin marginLeft($width:100) {
+    margin-left: -$width / 2;
+}
+
+@mixin marginTop($height:100) {
+    margin-top: -$height / 2;
+}
+
+@mixin marginCen {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+//透明度
+@mixin opacity( $opacity:50) {
+    opacity: $opacity / 100;
+    filter: alpha(opacity=$opacity);
+}
+
+//几秒内完成
+@mixin ad($ad:1) {
+    animation-duration: $ad+s;
+    -webkit-animation-duration: $ad+s;
+}
+
+//延迟
+@mixin delays($delays:.25) {
+    animation-delay: $delays+s;
+    -webkit-animation-delay: $delays+s;
+}
+
+//单选框
+input[type="radio"] {
+    position: relative;
+    appearance: button;
+    -webkit-appearance: button;
+    border: 1px solid #b5b5b5;
+    border-radius: 50%;
+    width: .3rem;
+    height: .3rem;
+    &:checked:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: .2rem;
+        height: .2rem;
+        background-color: #59afff;
+        border-radius: 50%;
+        @include marginLeft(0.2rem);
+        @include marginTop(0.2rem);
+    }
+}
+
+//复选框
+
+input[type="checkbox"]{
+    position:relative;
+    appearance:button;
+    -webkit-appearance:button;
+    border:1px solid #b5b5b5;
+    width:.3rem;
+    height:.3rem;
+    &:checked:after{
+        content:'';
+        position:absolute;
+        top:50%;left:50%;
+        width:.2rem;
+        height:.2rem;
+        background:#ccc;
+        background-size:.2rem .2rem;
+        @include marginLeft(0.2rem);
+        @include marginTop(0.2rem);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.wrap{
+    width:10rem;
+    .header{
+        height:pxTorem(60px);
+        background:#1c2b36;
+        li{
+            width:pxTorem(100px);
+            height:pxTorem(60px);
+            line-height: pxTorem(60px);
+            @include px2px(28);
+            margin-left:pxTorem(20px);
+            a{
+                display: block;
+                text-align:center;
+                color:#fff;
+            }
+        }
+    }
+    .login{
+        width:pxTorem(400px);
+        height:pxTorem(400px);
+        margin-top:pxTorem(120px);
+        @include marginCen;
+        li{
+            margin-bottom: pxTorem(30px);
+            .user_model{
+                @include px2px(24);
+                color:#888;
+                margin-top:pxTorem(20px);
+                span{
+                    display:inline-block;
+                    margin-left:pxTorem(23px);
+                }
+            }
+            .user{
+                height:pxTorem(60px);
+                label{
+                    line-height:pxTorem(60px);
+                    float:left;
+                    color:#000;
+                    @include px2px(28);
+                }
+                input{
+                    margin-left:pxTorem(30px);
+                    height:pxTorem(60px);
+                    line-height:pxTorem(60px);
+                    width:pxTorem(300px);
+                    float:left;
+                    padding-left:pxTorem(20px);
+                    @include px2px(28);
+                    border:1px solid #ccc;
+                    border-radius:pxTorem(15px);
+                }
+            }
+        }
+        .login_button{
+            @include marginCen;
+            display:block;
+            width:pxTorem(300px);
+            text-align:center;
+            height:pxTorem(55px);
+            line-height:pxTorem(55px);
+            border-radius:pxTorem(20px);
+            @include px2px(36);
+            color:#000;
+            box-shadow:pxTorem(0px) pxTorem(1px) pxTorem(3px) #777;
+            background:#fff;
+        }
+    }
+    .table{
+        width:8rem;
+        @include marginCen;
+        margin-top:pxTorem(60px);
+        .reverse{
+            line-height:pxTorem(30px);
+            text-align:center;
+            display:block;
+            @include px2px(28);
+            border:1px solid #777;
+            margin-top:pxTorem(30px);
+            background:#6f6565;
+            color: #f7f7f7;
+            padding: pxTorem(5px) pxTorem(30px);
+            border-radius:pxTorem(20px);
+        }
+        table{
+            border:pxTorem(1px) solid #ccc;
+            width:8rem;
+        }
+        tr{
+            border-bottom: 1px solid #ccc;
+        }
+        th{
+            border-right:1px solid #ccc;
+            @include px2px(32);
+            font-weight:bold;
+            background:#ececec;
+            height:pxTorem(45px);
+            line-height:pxTorem(45px);
+            text-align:center;
+        }
+        td{
+            border-right:1px solid #ccc;
+            text-align:center;
+            @include px2px(32);
+        }
+    }
+}

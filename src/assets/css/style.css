@@ -1,0 +1,227 @@
+* {
+  word-spacing: 1px;
+  letter-spacing: 1px;
+  word-break: break-all;
+  word-wrap: break-word;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight: transparent;
+  -webkit-text-size-adjust: none;
+  outline: none; }
+
+.html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+  .html body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+
+html {
+  background: #fcfcfc; }
+
+.wrap {
+  width: 100%; }
+
+html {
+  font-size: 75px; }
+
+input[type="radio"] {
+  position: relative;
+  appearance: button;
+  -webkit-appearance: button;
+  border: 1px solid #b5b5b5;
+  border-radius: 50%;
+  width: .3rem;
+  height: .3rem; }
+  input[type="radio"]:checked:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: .2rem;
+    height: .2rem;
+    background-color: #59afff;
+    border-radius: 50%;
+    margin-left: -0.1rem;
+    margin-top: -0.1rem; }
+
+input[type="checkbox"] {
+  position: relative;
+  appearance: button;
+  -webkit-appearance: button;
+  border: 1px solid #b5b5b5;
+  width: .3rem;
+  height: .3rem; }
+  input[type="checkbox"]:checked:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: .2rem;
+    height: .2rem;
+    background: #ccc;
+    background-size: .2rem .2rem;
+    margin-left: -0.1rem;
+    margin-top: -0.1rem; }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px; }
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0px;
+  background: rgba(0, 0, 0, 0.1); }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2); }
+
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.4); }
+
+.wrap {
+  width: 10rem; }
+  .wrap .header {
+    height: 0.8rem;
+    background: #1c2b36; }
+    .wrap .header li {
+      width: 1.33333rem;
+      height: 0.8rem;
+      line-height: 0.8rem;
+      margin-left: 0.26667rem; }
+      [data-dpr="1"] .wrap .header li {
+        font-size: 14px !important; }
+      [data-dpr="2"] .wrap .header li {
+        font-size: 28px !important; }
+      [data-dpr="3"] .wrap .header li {
+        font-size: 42px !important; }
+      .wrap .header li a {
+        display: block;
+        text-align: center;
+        color: #fff; }
+  .wrap .login {
+    width: 5.33333rem;
+    height: 5.33333rem;
+    margin-top: 1.6rem;
+    margin-left: auto;
+    margin-right: auto; }
+    .wrap .login li {
+      margin-bottom: 0.4rem; }
+      .wrap .login li .user_model {
+        color: #888;
+        margin-top: 0.26667rem; }
+        [data-dpr="1"] .wrap .login li .user_model {
+          font-size: 12px !important; }
+        [data-dpr="2"] .wrap .login li .user_model {
+          font-size: 24px !important; }
+        [data-dpr="3"] .wrap .login li .user_model {
+          font-size: 36px !important; }
+        .wrap .login li .user_model span {
+          display: inline-block;
+          margin-left: 0.30667rem; }
+      .wrap .login li .user {
+        height: 0.8rem; }
+        .wrap .login li .user label {
+          line-height: 0.8rem;
+          float: left;
+          color: #000; }
+          [data-dpr="1"] .wrap .login li .user label {
+            font-size: 14px !important; }
+          [data-dpr="2"] .wrap .login li .user label {
+            font-size: 28px !important; }
+          [data-dpr="3"] .wrap .login li .user label {
+            font-size: 42px !important; }
+        .wrap .login li .user input {
+          margin-left: 0.4rem;
+          height: 0.8rem;
+          line-height: 0.8rem;
+          width: 4rem;
+          float: left;
+          padding-left: 0.26667rem;
+          border: 1px solid #ccc;
+          border-radius: 0.2rem; }
+          [data-dpr="1"] .wrap .login li .user input {
+            font-size: 14px !important; }
+          [data-dpr="2"] .wrap .login li .user input {
+            font-size: 28px !important; }
+          [data-dpr="3"] .wrap .login li .user input {
+            font-size: 42px !important; }
+    .wrap .login .login_button {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      width: 4rem;
+      text-align: center;
+      height: 0.73333rem;
+      line-height: 0.73333rem;
+      border-radius: 0.26667rem;
+      color: #000;
+      box-shadow: 0rem 0.01333rem 0.04rem #777;
+      background: #fff; }
+      [data-dpr="1"] .wrap .login .login_button {
+        font-size: 18px !important; }
+      [data-dpr="2"] .wrap .login .login_button {
+        font-size: 36px !important; }
+      [data-dpr="3"] .wrap .login .login_button {
+        font-size: 54px !important; }
+  .wrap .table {
+    width: 8rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.8rem; }
+    .wrap .table .reverse {
+      line-height: 0.4rem;
+      text-align: center;
+      display: block;
+      border: 1px solid #777;
+      margin-top: 0.4rem;
+      background: #6f6565;
+      color: #f7f7f7;
+      padding: 0.06667rem 0.4rem;
+      border-radius: 0.26667rem; }
+      [data-dpr="1"] .wrap .table .reverse {
+        font-size: 14px !important; }
+      [data-dpr="2"] .wrap .table .reverse {
+        font-size: 28px !important; }
+      [data-dpr="3"] .wrap .table .reverse {
+        font-size: 42px !important; }
+    .wrap .table table {
+      border: 0.01333rem solid #ccc;
+      width: 8rem; }
+    .wrap .table tr {
+      border-bottom: 1px solid #ccc; }
+    .wrap .table th {
+      border-right: 1px solid #ccc;
+      font-weight: bold;
+      background: #ececec;
+      height: 0.6rem;
+      line-height: 0.6rem;
+      text-align: center; }
+      [data-dpr="1"] .wrap .table th {
+        font-size: 16px !important; }
+      [data-dpr="2"] .wrap .table th {
+        font-size: 32px !important; }
+      [data-dpr="3"] .wrap .table th {
+        font-size: 48px !important; }
+    .wrap .table td {
+      border-right: 1px solid #ccc;
+      text-align: center; }
+      [data-dpr="1"] .wrap .table td {
+        font-size: 16px !important; }
+      [data-dpr="2"] .wrap .table td {
+        font-size: 32px !important; }
+      [data-dpr="3"] .wrap .table td {
+        font-size: 48px !important; }
+
+/*# sourceMappingURL=style.css.map */
