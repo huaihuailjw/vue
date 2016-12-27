@@ -18,7 +18,7 @@
 
 <p>4、使用vue-cli初始化项目</p>
 <pre>
-	vue init webpackmy-project
+	vue init webpack my-project
 </pre>
 
 <p>4.1 不会进目录，请出门左拐</p>
