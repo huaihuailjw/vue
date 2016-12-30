@@ -4,11 +4,15 @@ import Vue from 'vue'
 import App from './App'
 import VueResource from 'vue-resource'
 import VueRouter from './router/router.js'
+import Mint from 'mint-ui'
 import reset from './assets/css/reset.css'
 import style from './assets/css/style.css'
+import mintUI from 'mint-ui/lib/style.css'
 import flexible from './assets/js/flexible.js'
 
-Vue.use(VueResource)
+Vue.use(Mint);
+Vue.use(VueResource);
+
 
 new Vue({
   el: "#app",

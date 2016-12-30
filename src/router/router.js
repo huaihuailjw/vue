@@ -1,21 +1,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
-import register from '../views/register.vue'
+import portal from '../views/portal.vue'
+import food from '../views/food.vue'
 import login from '../views/login.vue'
-import form from '../views/form.vue'
-
 
 const router = new VueRouter({
   routes: [{
     path: '/login',
     component: login
   }, {
-    path: '/register',
-    component: register
+    path: '/portal',
+    component: portal
   }, {
-    path: '/form',
-    component: form
+    path: '/food',
+    component: food
   }, {
     path: '*',
     redirect: '/login'

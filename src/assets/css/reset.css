@@ -373,6 +373,8 @@ q:before, q:after {
   content: '';
   content: none; }
 
+.clear:before,.clear:after {content: "."; display: block; height: 0; visibility: hidden;}
+.clear:after {clear: both;}
 .row:before, .row:after {
   content: '\0020';
   display: block;
