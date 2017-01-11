@@ -20,7 +20,7 @@
         </ul>
       </div>
       <div class="menu_list">
-        <dl v-for="(item,index) in food.menu_list">
+        <dl v-for="(item,index) in menuList">
           <dt>
             <div class="title">
               <strong>{{item.title[0]}}</strong>
@@ -61,6 +61,18 @@
   </div>
 </template>
 <script>
+  function GetQueryString(str, name) {
+    str = decodeURIComponent(str);
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = str.substr(str.indexOf("?") + 1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return null;
+  }
+
+  function getUrlQueryString(name) {
+    return GetQueryString(window.location.href, name);
+  }
+
   function htmlHeight() {
     return document.documentElement.clientHeight -
       document.querySelector('.shopheader').clientHeight -
@@ -72,7 +84,9 @@
       return {
         menuClass: 0,
         menuHeight: 0,
-        cache: true
+        cache: true,
+        foodNum: getUrlQueryString("id"),
+        menuList: []
       }
     },
     components: {
@@ -89,27 +103,27 @@
         return htmlHeight();
       }
     },
-    // directives: {
-    //   scroll(that, definition) {
-    //     definition.value = 1;
-    //     that.addEventListener('scroll', function (event) {
-    //       const scrollTop = that.scrollTop;
-    //       switch (true) {
-    //         case scrollTop > that.children[0].clientHeight:
-    //           this.menuClass = 1;
-    //           break;
-    //         case scrollTop > that.children[1].clientHeight + that.children[0].clientHeight:
-    //           this.menuClass = 2;
-    //           break;
-    //       }
-    //     }, false);
-    //   }
-    // },
+    mounted() {
+      this.$nextTick(function () {
+        const _this = this;
+        this.getList();
+      })
+    },
     methods: {
+      getList() {
+        const _this = this;
+        if (_this.menuList.length == 0) {
+          this.axios.get('static/json/food.json')
+            .then(function (json) {
+              _this.menuList.push(json.data[_this.foodNum][0].menu_list[_this.menuClass]);
+            });
+        };
+      },
       menu_navFn(name, index) {
         //点击类型
+        this.menuList = [];
         this.menuClass = this.menuClass == index ? index : index;
-
+        this.menuList.push(this.food.menu_list[this.menuClass]);
       },
       add(item, index, event) {
         const _this = this;
