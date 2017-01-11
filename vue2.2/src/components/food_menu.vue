@@ -1,6 +1,6 @@
 <template>
   <div class="menu" v-if="food">
-    <div v-if="foodnav == 0 && food.menu_list == undefined" class="menu-nodata">
+    <div v-if="foodnav == 0 && food.menu_list.length == 0" class="menu-nodata">
       <p>没有商品</p>
       <p>该商家还未上传商品</p>
     </div>

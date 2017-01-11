@@ -442,43 +442,8 @@
     ],
     "activity": "2个活动",
     "annc": "显示“蜂鸟专送”字样，配送由饿了么全程提供配送，相关费用由饿了么统一收取。",
-    "menu_nav": [{
-      "name": "热销榜",
-      "sum": 0,
-      "goodsid": "2147483647"
-    }, {
-      "name": "套餐",
-      "num": "0",
-      "goodsid": "0"
-    }, {
-      "name": "甜品",
-      "num": "0",
-      "goodsid": "1"
-    }, {
-      "name": "饮料",
-      "num": "0",
-      "goodsid": "2"
-    }, {
-      "name": "佐食",
-      "num": "0",
-      "goodsid": "3"
-    }, {
-      "name": "汤",
-      "num": "0",
-      "goodsid": "4"
-    }, {
-      "name": "点心",
-      "num": "0",
-      "goodsid": "5"
-    }, {
-      "name": "面类",
-      "num": "0",
-      "goodsid": "6"
-    }, {
-      "name": "饭类",
-      "num": "0",
-      "goodsid": "7"
-    }]
+    "menu_nav": [],
+    "menu_list":[]
   }],
   "3": [{
     "name": "3店",
