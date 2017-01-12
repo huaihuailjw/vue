@@ -15,9 +15,9 @@ import reset from './assets/css/reset.css'
 import style from './assets/css/style.css'
 import mintUI from 'mint-ui/lib/style.css'
 
+Vue.use(VueResource);
 Vue.use(Mint);
 Vue.use(Vueaxios,axios);
-Vue.use(VueResource);
 
 new Vue({
   el: "#app",
