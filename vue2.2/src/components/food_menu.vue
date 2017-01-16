@@ -49,6 +49,14 @@
                   <img src="static/images/add.png" />
                 </a>
               </div>
+              <div v-for="ball in balls">
+                <transition name="drop" @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter">
+                  <div v-show="ball.show" class="ball">
+                    <div class="inner inner-hook">
+                    </div>
+                  </div>
+                </transition>
+              </div>
             </section>
           </dd>
         </dl>
@@ -84,9 +92,20 @@
       return {
         menuClass: 0,
         menuHeight: 0,
-        cache: true,
         foodNum: getUrlQueryString("id"),
-        menuList: []
+        menuList: [],
+        balls: [{
+          show: false
+        }, {
+          show: false
+        }, {
+          show: false
+        }, {
+          show: false
+        }, {
+          show: false
+        }],
+        dropBalls: []
       }
     },
     components: {
@@ -127,30 +146,11 @@
       },
       add(item, index, event) {
         const _this = this;
-        if (this.cache) {
-          _this.cache = false;
-          const div = document.createElement('div');
-          const i = document.createElement('i');
-          const height = document.documentElement.clientHeight;
-          div.className = "flyball";
-          i.className = "inner";
-          i.style.transform = " translate3d(0px," + event.clientY + "px,8px)";
-          div.style.transform = "translate3d(" + event.clientX + "px,0px,0px)";
-          div.appendChild(i);
-          document.body.appendChild(div);
-          setTimeout(function () {
-            item.qty++;
-            item.bought = true;
-            _this.$store.dispatch('boughtList', item);
-            _this.$store.dispatch('typeCodeAdd', item.goodsid);
-            div.style.transform = "translate3d(40px,0px,0px)";
-            i.style.transform = " translate3d(0px," + height + "px,8px)";
-            setTimeout(function () {
-              _this.cache = true;
-              div.remove();
-            }, 700);
-          }, 0);
-        };
+        item.qty++;
+        item.bought = true;
+        _this.$store.dispatch('boughtList', item);
+        _this.$store.dispatch('typeCodeAdd', item.goodsid);
+        _this.drop(event.target);
       },
       min(item, index) {
         const _this = this;
@@ -158,6 +158,50 @@
         item.bought = false;
         _this.$store.dispatch('boughtList', item);
         _this.$store.dispatch('typeCodeMin', item.goodsid);
+      },
+      drop(el) {
+        for (let i = 0; i < this.balls.length; i++) {
+          let ball = this.balls[i];
+          if (!ball.show) {
+            ball.show = true;
+            ball.el = el;
+            this.dropBalls.push(ball);
+            return;
+          }
+        }
+      },
+      beforeEnter(el) {
+        let count = this.balls.length;
+        while (count--) {
+          let ball = this.balls[count];
+          if (ball.show) {
+            let rect = ball.el.getBoundingClientRect();
+            let x = rect.left - 32;
+            let y = -(window.innerHeight - rect.top - 22);
+            el.style.display = '';
+            el.style.webkitTransform = `translate3d(0,${y}px,0)`;
+            el.style.transform = `translate3d(0,${y}px,0)`;
+            let inner = el.getElementsByClassName('inner-hook')[0];
+            inner.style.webkitTransform = `translate3d(${x}px,0,0)`;
+            inner.style.transform = `translate3d(${x}px,0,0)`;
+          }
+        }
+      },
+      enter(el) {
+        this.$nextTick(() => {
+          el.style.webkitTransform = 'translate3d(0,0,0)';
+          el.style.transform = 'translate3d(0,0,0)';
+          let inner = el.getElementsByClassName('inner-hook')[0];
+          inner.style.webkitTransform = 'translate3d(0,0,0)';
+          inner.style.transform = 'translate3d(0,0,0)';
+        });
+      },
+      afterEnter(el) {
+        let ball = this.dropBalls.shift();
+        if (ball) {
+          ball.show = false;
+          el.style.display = 'none';
+        }
       }
     }
   }

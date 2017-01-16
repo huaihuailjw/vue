@@ -63,6 +63,7 @@
     methods: {
       getShop() { // 请求并替换数据
         const _this = this;
+        _this.$store.dispatch('changeShop', []);
         if (this.$store.state.shop.length == 0) {
           this.axios.get('static/json/rate.json')
             .then(function (json) {
@@ -76,7 +77,8 @@
       href(index) {
         this.$store.dispatch('changeFoodNav', 0);
         this.$store.dispatch('changeFood', '');
-        window.location = '#food?id=' + index;
+        this.$router.push('food?id='+index);
+        // window.location = '#food?id=' + index;
       }
     }
   }

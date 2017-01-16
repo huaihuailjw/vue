@@ -7,8 +7,12 @@
       <li>
         <input v-if="class2 === ''" v-model="password" placeholder="密码" type="password">
         <input v-else="class2 === 'true'" v-model="password" placeholder="密码" type="text">
-        <div class="switch">
-          <mt-switch @click.native="switch_wrap($event)"></mt-switch>
+        <div @click="switch_wrap" class="switch">
+          <div :class="['switch-wrap',{'switch-true':class2 == 'true' ? true : false }]">
+            <div class="switch-cycle"></div>
+            <div class="switch-left">abc</div>
+            <div class="switch-right">···</div>
+          </div>
         </div>
       </li>
     </ul>
@@ -16,11 +20,6 @@
   </div>
 </template>
 <script>
-  import Vue from 'vue';
-  import {
-    Switch
-  } from 'mint-ui';
-  Vue.component('mt-switch', Switch);
   export default {
     data() {
       return {
@@ -34,11 +33,12 @@
       switch_wrap(event) {
         const _this = this;
         _this.class2 = _this.class2 == '' ? _this.class2 = 'true' : _this.class2 = '';
-        if (event) event.preventDefault();
       },
       login_button() {
         this.$toast('跳转中');
-        window.location = '#portal';
+        this.$router.push('portal');
+        // window.location = '#portal';
+        // this.$store.dispatch('changeHead', 'portal');
       }
     }
   }

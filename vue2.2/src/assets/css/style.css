@@ -396,7 +396,8 @@ input[type="checkbox"] {
         width: 5rem;
         height: 0.625rem;
         line-height: 0.625rem;
-        margin: 0.3125rem 0; }
+        margin: 0.3125rem 0;
+        background: #fff; }
       .wrap .login ul li .switch {
         position: absolute;
         right: 0.3125rem;
@@ -1080,36 +1081,60 @@ input[type="checkbox"] {
     height: 0.39063rem;
     margin-right: 0.23438rem; }
 
-.flyball {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 20;
-  -webkit-transition: -webkit-transform .5s linear;
-  transition: -webkit-transform .5s linear;
-  transition: transform .5s linear;
-  transition: transform .5s linear, -webkit-transform .5s linear; }
-  .flyball .inner {
+.switch-wrap {
+  position: relative;
+  width: 1.2rem;
+  height: .4rem;
+  border-radius: .2rem;
+  background: #ccc; }
+  .switch-wrap.switch-true {
+    background: #98c8f4; }
+    .switch-wrap.switch-true .switch-cycle {
+      right: -.026667rem;
+      background: #3190e8;
+      -webkit-transform: translateX(88%);
+      transform: translateX(88%); }
+  .switch-wrap .switch-cycle {
+    position: absolute;
+    top: -.133333rem;
+    left: -.026667rem;
+    z-index: 10;
+    width: .666667rem;
+    height: .666667rem;
+    border-radius: 50%;
+    background: #f1f1f1;
+    box-shadow: 0 0.02667rem 0.05333rem 0 rgba(0, 0, 0, 0.1);
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s; }
+  .switch-wrap .switch-left {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 0.46875rem;
-    height: 0.46875rem;
+    color: #fff;
+    left: .106667rem;
+    font-size: .266667rem;
+    line-height: .4rem; }
+  .switch-wrap .switch-right {
+    position: absolute;
+    top: 0;
+    right: .106667rem;
+    color: #fff;
+    font-size: .266667rem;
+    line-height: .4rem; }
+
+.ball {
+  position: fixed;
+  left: 32px;
+  bottom: 22px;
+  z-index: 200;
+  transition: all 0.5s cubic-bezier(0.49, -0.29, 0.75, 0.41); }
+  .ball .inner {
+    width: 0.39063rem;
+    height: 0.39063rem;
+    border-radius: 50%;
     background-color: #3190e8;
-    -webkit-border-radius: 50%;
-    border-radius: 50%; }
-
-.flyball,
-.flyball .inner {
-  will-change: transform;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0); }
-
-.flyball .inner {
-  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.3, -0.2, 1, 0);
-  transition: -webkit-transform 0.5s cubic-bezier(0.3, -0.2, 1, 0);
-  transition: transform 0.5s cubic-bezier(0.3, -0.2, 1, 0);
-  transition: transform 0.5s cubic-bezier(0.3, -0.2, 1, 0), -webkit-transform 0.5s cubic-bezier(0.3, -0.2, 1, 0); }
+    transition: all .5s linear; }
 
 i.triangle {
   position: absolute;

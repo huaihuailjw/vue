@@ -2,6 +2,7 @@
  * Created by Administrator on 2017/1/4.
  */
 
+export const Head = 'Head';
 export const SHOP = 'SHOP';
 export const FOOD = 'FOOD';
 export const FOODNAV = 'FOODNAV';

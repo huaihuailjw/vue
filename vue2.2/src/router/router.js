@@ -8,20 +8,24 @@ import food from '../views/food.vue'
 
 const router = new VueRouter({
   routes: [{
-    path: '/login',
-    component: login
+    path: "/login",
+    component: login,
+    name: "登陆"
   }, {
-    path: '/portal',
-    component: portal
+    path: "/portal",
+    component: portal,
+    name: "首页"
   }, {
-    path: '/mall',
-    component: mall
+    path: "/mall",
+    component: mall,
+    name: "美食"
   }, {
-    path: '/food',
+    path: "/food",
     component: food
   }, {
-    path: '*',
-    redirect: '/login'
+    path: "*",
+    redirect: "/login"
   }]
 })
+
 export default router;

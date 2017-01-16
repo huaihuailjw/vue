@@ -5,6 +5,9 @@
 import * as types from './mutation-types'
 
 export default {
+  changeHead({commit}, head) {
+    commit(types.head, head)
+  },
   changeShop({commit}, shop) {
     commit(types.SHOP, shop)
   },

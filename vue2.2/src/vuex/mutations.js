@@ -5,6 +5,9 @@ import * as types from './mutation-types'
 import Vue from 'vue'
 
 export default {
+  [types.HEAD](state, head) {
+    state.head = head;
+  },
   // 商店
   [types.SHOP](state, shop) {
     state.shop = shop;

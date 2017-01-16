@@ -10,6 +10,7 @@ import actions from './actions.js'
 Vue.use(Vuex);
 
 const state = {
+  head: document.location.hash.substring(2),
   shop: [], //店铺
   food: [], //食物
   foodnav: 0, //商品||商店
