@@ -11,6 +11,7 @@
 	4.购物车组件
 	5.商店页面并开发组件(头部，商店内容)
 
+
 	组件开发
 	1.路由
 	<span style="decoration:line">2.import from</span>

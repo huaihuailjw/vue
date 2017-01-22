@@ -1,7 +1,7 @@
 # vue
 
 <h1>Vue 饿了么版本2.0</h1>
-<pre>
+
 	项目有
 	1.登陆页
 	<span style="decoration:line">2.首页</span>
@@ -12,8 +12,9 @@
 	4.购物车组件
 	5.商店页面并开发组件(头部，商店内容)
 	6.标题组件开发
-</pre>
-<pre>
+
+
+
 	组件开发
 	1.路由
 	<span style="decoration:line">2.import from</span>
@@ -22,4 +23,3 @@
 	3.axios
 	4.mint-ui
 	5.局部指令开发
-</pre>
