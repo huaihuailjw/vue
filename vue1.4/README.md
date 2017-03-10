@@ -14,7 +14,7 @@
 
 	组件开发
 	1.路由
-	~2.import from~
+	-2.import from-
 	2.Vuex
 	~3.资源静态~
 	3.axios
