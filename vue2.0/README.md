@@ -4,10 +4,10 @@
 
 	项目有
 	1.登陆页
-	<span style="decoration:line">2.首页</span>
-	<span style="decoration:line">2.首页 内容和nav组件开发</span>
+	<del>2.首页</del>
+	<del>2.首页 内容和nav组件开发</del>
 	2.局部指令 拖拽效果
-	<span style="decoration:line">3.商品页</span>
+	<del>3.商品页</del>
 	3.商品重新开发并开发组件
 	4.购物车组件
 	5.商店页面并开发组件(头部，商店内容)
@@ -17,9 +17,9 @@
 
 	组件开发
 	1.路由
-	<span style="decoration:line">2.import from</span>
+	<del>2.import from</del>
 	2.Vuex
-	<span style="decoration:line">3.资源静态</span>
+	<del>3.资源静态</del>
 	3.axios
 	4.mint-ui
 	5.局部指令开发
