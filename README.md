@@ -1,4 +1,4 @@
-# vue
+# vue（DEMO，未更新状态）
 
 > A Vue.js project
 

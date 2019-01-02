@@ -12,7 +12,10 @@
   },
   "dependencies": {
     "mint-ui": "^2.0.6",
-    "vue": "^2.1.0"
+    "vue": "^2.1.0",
+    "vue-axios": "^2.1.4",
+    "vue-router": "^3.0.2",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
@@ -35,7 +38,7 @@
     "html-webpack-plugin": "^2.8.1",
     "http-proxy-middleware": "^0.17.2",
     "json-loader": "^0.5.4",
-    "nightwatch": "^0.9.8",
+    "nightwatch": "^1.0.18",
     "node-sass": "^4.1.1",
     "opn": "^4.0.2",
     "ora": "^0.3.0",
@@ -43,7 +46,7 @@
     "selenium-server": "2.53.1",
     "semver": "^5.3.0",
     "shelljs": "^0.7.4",
-    "url-loader": "^0.5.7",
+    "url-loader": "^1.1.2",
     "vue-loader": "^10.0.0",
     "vue-style-loader": "^1.0.0",
     "vue-template-compiler": "^2.1.0",

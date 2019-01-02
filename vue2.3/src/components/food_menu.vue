@@ -64,10 +64,19 @@
     </div>
     <!-- 商家 -->
     <div v-else="foodnav == 1" class="merchants">
-      这里是商家
+      内容未更新
     </div>
   </div>
 </template>
+<style>
+  .merchants{
+    width:100%;
+    text-align:center;
+    font-size:46px;
+    margin-top:80px;
+    color:#999;
+  }
+</style>
 <script>
   function GetQueryString(str, name) {
     str = decodeURIComponent(str);
